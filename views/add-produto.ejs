@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blockchain</title>
+    <link rel='stylesheet' href='/styles/main.css' />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <main>
+        <h1>Adicionar novo produto</h1>
+        <form>
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome"><br>
+            <label for="local">Local de origem:</label><br>
+            <input type="text" id="local" name="local"><br>
+            <label for="infoAd">Informações adicionais:</label><br>
+            <input type="text" id="infoAd" name="infoAd"><br>
+            <label for="produtor">Produtor(a):</label><br>
+            <input type="text" id="produtor" name="produtor"><br>
+            <label for="comprador">Comprador(a):</label><br>
+            <input type="text" id="comprador" name="comprador"><br>
+            <label for="preco">Preço pela unidade:</label><br>
+            <input type="text" id="preco" name="preco"><br>
+            <label for="quantidade">Quantidade:</label><br>
+            <input type="text" id="quantidade" name="quantidade"><br>
+            <button onclick="submit" class="btn btn-success">Adicionar</button>
+        </form>
+    </main>
+  </body>
+</html>
+
+<script>
+  function submit(){
+    var timestamp = Date().getTime();;
+    var bloco = (
+      document.getElementById("nome").value, 
+      document.getElementById("local").value, 
+      document.getElementById("infoAd").value, 
+      timestamp, 
+      {
+        produtor: document.getElementById("produtor").value,
+        comprador: document.getElementById("comprador").value,
+        preco_unidade: document.getElementById("preco").value,
+        quantidade: document.getElementById("quantidade").value
+      }
+    )
+    // addNewBlock(bloco);
+  }
+</script>

@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 const indexRoute = require('./routes/index');
-const curriculoRoute = require('./routes/curriculo');
+const BlockchainRoute = require('./routes/blockchain');
 
 
 // Setup view engine
@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', indexRoute);
-app.get('/curriculo', curriculoRoute);
+app.get('/lista-blockchain', BlockchainRoute);
 
 
 // 404
